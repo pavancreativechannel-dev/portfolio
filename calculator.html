@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            gap: 20px;
+            background-color: orange;
+        }
+        
+        h2 {
+            font-size: 40px;
+            font-family: arial;
+            color: blue;
+            text-shadow: 2px 2px black;
+        }
+        
+        form {
+            box-shadow: 0 4px 6px black;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: lightgrey;
+        }
+        
+        form input {
+            width: 100%;
+            height: 50px;
+            margin-bottom: 10px;
+            font-size: 30px;
+            text-align: right;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+        
+        form button {
+            width: 70px;
+            height: 70px;
+            font-size: 25px;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+            box-shadow: 0 3px 5px black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>calculator</h2>
+    <form action="">
+        <input type="text" id="display" readonly><br>
+        <button onclick="clearDisplay()">AC</button>
+        <button onclick="deleteLast()">DEL</button>
+        <button onclick="addToDisplay('%')">%</button>
+        <button onclick="addToDisplay('/')">/</button><br>
+        <button onclick="addToDisplay('7')">7</button>
+        <button onclick="addToDisplay('8')">8</button>
+        <button onclick="addToDisplay('9')">9</button>
+        <button onclick="addToDisplay('*')">*</button><br>
+        <button onclick="addToDisplay('4')">4</button>
+        <button onclick="addToDisplay('5')">5</button>
+        <button onclick="addToDisplay('6')">6</button>
+        <button onclick="addToDisplay('-')">-</button><br>
+        <button onclick="addToDisplay('1')">1</button>
+        <button onclick="addToDisplay('2')">2</button>
+        <button onclick="addToDisplay('3')">3</button>
+        <button onclick="addToDisplay('+')">+</button><br>
+        <button onclick="addToDisplay('0')">0</button>
+        <button onclick="addToDisplay('.')">.</button>
+        <button onclick="calculate()">=</button>
+
+    </form>
+    <script>
+        const inputField = document.getElementById('display');
+
+        function addToDisplay(value) {
+            inputField.value += value;
+        }
+
+        function clearDisplay() {
+            inputField.value = '';
+        }
+
+        function deleteLast() {
+            inputField.value = inputField.value.slice(0, -1);
+        }
+
+        function calculate() {
+            try {
+                inputField.value = eval(inputField.value);
+            } catch (error) {
+                inputField.value = 'Error';
+            }
+        }
+        // Prevent form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

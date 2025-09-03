@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        header {
+            background-color: orange;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px black;
+        }
+        
+        .logo {
+            color: black;
+            font-size: 25px;
+            font-weight: bold;
+            font-family: arial;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: blue;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: 90vh;
+            gap: 50px;
+        }
+        
+        nav .links {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        nav .links a {
+            box-shadow: 0 3px 5px black;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 3px;
+            width: 500px;
+            padding: 10px 15px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        
+        nav .links a:hover {
+            background-color: orange;
+            transition: all 0.3s ease;
+        }
+        
+        nav img {
+            border: 0.5px solid darkorange;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px black;
+            object-fit: cover;
+        }
+        
+        nav img:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        }
+        
+        .main {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .main a {
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            font-family: arial;
+            box-shadow: 0 3px 5px black;
+            padding: 10px 15px;
+            border: 1px solid black;
+            border-radius: 3px;
+        }
+        
+        .main a:hover {
+            background-color: orange;
+            transition: all 0.3s ease;
+        }
+        
+        @media (max-width:600px) {
+            nav {
+                height: auto;
+                gap: 20px;
+                padding: 20px;
+            }
+            nav .links a {
+                width: 300px;
+                font-size: 18px;
+            }
+            nav img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">Pavan chandra <span>Portfolio</span></div>
+    </header>
+    <div class="main">
+        <a href="about.html">About</a>
+        <a href="pavan-uiux-resume.docx"> My Resume</a>
+    </div>
+    <nav>
+        <div class="links">
+
+            <a href="calculator.html">Project-1 <span>Calculator</span></a>
+            <a href="time-date.html">Project-2 <span>time and date</span></a>
+            <a href="do-to-list.html">Project-3 <span>My To‑Do List</span></a>
+            <a href="validation.html">Project-4 <span>Validation form</span></a>
+
+        </div>
+        <img src="pavan.png" alt="">
+    </nav>
+
+</body>
+
+</html>
